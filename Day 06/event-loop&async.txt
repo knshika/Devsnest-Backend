@@ -1,0 +1,4 @@
+js is a SINGLE THREADED , NON BLOCKING , ASYNCHRONOUS , CONCURRENT language.
+
+It have a CALL STACK , EVENT LOOP, CALLBACK QUEUE and other APIs. 
+but V8 have just HEAP & STACK.
