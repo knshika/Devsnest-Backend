@@ -1,0 +1,6 @@
+npm init
+npm instal --save express (prod)
+npm instal --save-dev nodemon (dev)
+create index.js
+nodemon index.js
+npm install --save body-parser
