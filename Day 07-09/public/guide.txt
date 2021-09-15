@@ -1,0 +1,10 @@
+npm init
+npm instal --save express (prod)
+npm instal --save-dev nodemon (dev)
+create index.js
+nodemon index.js
+npm install --save body-parser (not so helpful)
+npm i -s jade (html)
+//day 9 
+npx express-generator
+npm install && DEBUG=day-09:* npm start
