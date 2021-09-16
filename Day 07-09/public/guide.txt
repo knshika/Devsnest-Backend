@@ -8,3 +8,9 @@ npm i -s jade (html)
 //day 9 
 npx express-generator
 npm install && DEBUG=day-09:* npm start
+//day 11
+npm install--save sequelize  // its is orm to connect to db (no diff in changing db)
+//day 12 connecting redis
+redis.js(database)
+npm i -s express-session redis connect-redis (record session)
+
