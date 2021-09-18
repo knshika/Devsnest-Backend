@@ -4,10 +4,17 @@ var registerInitialCheck = require('../middlewares/registerChecks')
 var register = require('../controllers/register')
 
 /* GET home page. */
+//store redis value
 router.get('/', function(req, res, next) {
+  const sess = req.session;
+  sess.username='knshi';
   res.render('index', { title: 'Express' });
 });
-
+//get redis value
+router.get('/test', function(req, res, next) {
+  console.log('Redis value',req.session.username)
+  res.render('index', { title: 'Express' });
+});
 
 /*
 @requires {email, fname, lname , password , confirmPass}

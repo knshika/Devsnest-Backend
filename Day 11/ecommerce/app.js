@@ -3,6 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const {
+  redisClient,RedisStore,session
+} = require('./database/redis')
+
+require('./database/mongo');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -18,6 +23,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+//making redis session middle ware forredis client
+app.use(session({
+  store:new RedisStore({client:redisClient}),
+  secret:'secretKey123',
+  resave:false,
+  saveUnintialized:false,
+  cookie:{
+    secure:false,
+    httpOnly:false,
+    maxAge:1000*60*10
+  }
+}))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

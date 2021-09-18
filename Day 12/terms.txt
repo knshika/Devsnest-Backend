@@ -1,0 +1,4 @@
+agile methodology
+jira software
+product requirement doucument
+hld (high level diagram)
