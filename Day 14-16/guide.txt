@@ -1,3 +1,6 @@
+Day 14
+login nd register  user, jwt, passport , .env -> using in redis
+
 npx express-generator
 npm i -s dotenv
 .env file and use in app.js
@@ -63,3 +66,30 @@ output:
 }
 localhost:5000/passport/user-protected
 auth bearer token 
+
+
+Day 15:
+
+Pagination 
+products (route , model and add in app.js)
+
+localhost:5000/products
+
+need to add products (utils->init.js)
+
+security handling .. passing something which can become sql query (user.js 15 line)
+
+how to go from http -> https (add certificate in server)
+
+
+
+
+DAy 16:
+
+how to send stream as done in apps like netflix
+
+route for stream in app.js -> routes (folder stream.js same config)
+
+http://localhost:5000/stream
+
+//busboy npm  csv->json when file is coming from frontend

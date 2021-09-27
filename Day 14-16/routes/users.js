@@ -12,13 +12,17 @@ const pool = new Pool({
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
-  pool.query('SELECT * FROM "Users"', (err, result) => {
-    if (err) {
-      throw err;
-    } else {
-      res.status(200).json(result);
+  pool.query(
+    'SELECT * FROM "Users" where id=$1 and email=$2',
+    [request.query.id, request.query.email],
+    (err, result) => {
+      if (err) {
+        throw err;
+      } else {
+        res.status(200).json(result);
+      }
     }
-  });
+  );
 });
 
 module.exports = router;

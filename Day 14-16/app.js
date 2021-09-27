@@ -31,9 +31,9 @@ app.use(
     resave: false,
     saveUnintialized: false,
     cookie: {
-      secure: false,
-      httpOnly: false,
-      maxAge: 1000 * 60 * 10,
+      secure: false, // if true only transmit cookie over https
+      httpOnly: false, // if true prevent client side JS from reading the cookie
+      maxAge: 1000 * 60 * 10, // session max age in miliseconds
     },
   })
 );
@@ -44,6 +44,8 @@ require("./middlewares/passport")(passport);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/passport", require("./routes/passport"));
+app.use("/products", require("./routes/products"));
+app.use("/stream", require("./routes/stream"));
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
