@@ -1,0 +1,65 @@
+npx express-generator
+npm i -s dotenv
+.env file and use in app.js
+npm i -s passport-jwt passport
+npm install bcryptjs
+
+localhost:5000/register (post)
+{
+    "email":"knshiNot@gmail.com",
+    "password":"Query123*",
+    "confirmPassword":"Query123*"
+}
+output:
+{
+  "id": 3,
+  "email": "knshinot@gmail.com",
+  "password": "$2b$10$yWC10vjSkweWnhqolhpwke4g4APJU8dWiDqSWXynaNjdi5NePG89G",
+  "fullName": "Knshi",
+  "updatedAt": "2021-09-27T03:11:14.879Z",
+  "createdAt": "2021-09-27T03:11:14.879Z"
+}
+
+ sudo systemctl start mongod
+
+
+localhost:5000/passport/register-user
+{
+    "email":"knshiNot@gmail.com",
+    "username":"knshika,
+    "password":"Query123*",
+    "name":"knshii*"
+}
+output:
+{
+  "message": "Hurry! now you are successfully registred. Please nor login.",
+  "success": true,
+  "user": {
+    "name": "knshii*",
+    "email": "knshikanot@gmail.com",
+    "role": "user",
+    "username": "knshika",
+    "password": "$2a$12$UBwb3m6zqNhuN7BpMPee8.H2ljAgaNSW.YRzySJDX9XVNqaw80E/i",
+    "_id": "615138fa052b8b8110351af3",
+    "createdAt": "2021-09-27T03:22:34.043Z",
+    "updatedAt": "2021-09-27T03:22:34.043Z",
+    "__v": 0
+  }
+}
+localhost:5000/passport/login-user
+{
+    "username":"knshika",
+    "password":"Query123*"
+}
+output:
+ {
+  "username": "knshika",
+  "role": "user",
+  "email": "knshikanot@gmail.com",
+  "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE1MTM4ZmEwNTJiOGI4MTEwMzUxYWYzIiwicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6Imtuc2hpa2EiLCJlbWFpbCI6Imtuc2hpa2Fub3RAZ21haWwuY29tIiwiaWF0IjoxNjMyNzEzMjUzLCJleHAiOjE2MzMzMTgwNTN9.qGvcO3PwIaqlgIIcMjV2LHDmyT-qqAfNPNxe83RAcdM",
+  "expiresIn": 168,
+  "message": "Hurray! You are now logged in.",
+  "success": true
+}
+localhost:5000/passport/user-protected
+auth bearer token 

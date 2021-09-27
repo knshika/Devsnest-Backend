@@ -16,3 +16,6 @@ redis.js(database)
 npm i -s express-session redis connect-redis (record session)
 //using mongo
 npm i -s mongodb mongoose
+
+//
+bcrypt , pg install
