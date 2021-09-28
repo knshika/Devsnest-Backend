@@ -74,7 +74,7 @@ Pagination
 products (route , model and add in app.js)
 
 localhost:5000/products
-
+node utils/init.js (make sure to run before to get data stored in database)
 need to add products (utils->init.js)
 
 security handling .. passing something which can become sql query (user.js 15 line)
@@ -93,3 +93,17 @@ route for stream in app.js -> routes (folder stream.js same config)
 http://localhost:5000/stream
 
 //busboy npm  csv->json when file is coming from frontend
+
+
+
+Day 17:
+
+implementing payment
+route for stripe in app.js -> routes (folder stream.js same config) also the html file
+npm i stripe
+
+make account in stripe 
+copy security key
+also make account setting section in https://dashboard.stripe.com/account
+
+run server in http://localhost:5000/stripe

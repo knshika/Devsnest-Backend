@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
     const query = req.query;
     const count = parseInt(query.count) || 10;
     const page = parseInt(query.page) || 1;
-    const after = parseInt(quer.after);
+    const after = parseInt(query.after);
     let sql = {};
     if (after) {
       sql = {
